@@ -86,7 +86,13 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.10</version>
-
+				<configuration>
+					<excludes>
+						<exclude>**/OtpServiceApplication.class</exclude>
+						<exclude>com/online/busbooking/otp_service/entity/*</exclude>
+						<exclude>com/online/busbooking/otp_service/DTO/*</exclude>
+					</excludes>
+				</configuration>
 				<executions>
 					<!-- Attach JaCoCo agent before tests -->
 					<execution>

@@ -14,6 +14,10 @@ public class GenericException extends RuntimeException{
         this.httpStatus = httpStatus;
     }
 
+    public GenericException () {
+
+    }
+
     public String getCode() {
         return code;
     }
