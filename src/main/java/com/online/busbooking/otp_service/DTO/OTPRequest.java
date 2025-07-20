@@ -19,4 +19,12 @@ public class OTPRequest {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
+    @Override
+    public String toString() {
+        return "OTPRequest{" +
+                "emailId='" + emailId + '\'' +
+                ", memberId='" + memberId + '\'' +
+                '}';
+    }
 }

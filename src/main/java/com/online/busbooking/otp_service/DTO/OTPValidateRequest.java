@@ -19,4 +19,12 @@ public class OTPValidateRequest {
     public void setReferenceNumber(String referenceNumber) {
         this.referenceNumber = referenceNumber;
     }
+
+    @Override
+    public String toString() {
+        return "OTPValidateRequest{" +
+                "otpNumber='" + otpNumber + '\'' +
+                ", referenceNumber='" + referenceNumber + '\'' +
+                '}';
+    }
 }

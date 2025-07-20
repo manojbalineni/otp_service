@@ -37,4 +37,14 @@ public class ErrorResponse {
     public void setHttpStatus(int httpStatus) {
         this.httpStatus = httpStatus;
     }
+
+    @Override
+    public String toString() {
+        return "ErrorResponse{" +
+                "timeStamp='" + timeStamp + '\'' +
+                ", errorCode='" + errorCode + '\'' +
+                ", errorMessage='" + errorMessage + '\'' +
+                ", httpStatus=" + httpStatus +
+                '}';
+    }
 }

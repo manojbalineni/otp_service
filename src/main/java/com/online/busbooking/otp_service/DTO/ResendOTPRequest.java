@@ -20,4 +20,12 @@ public class ResendOTPRequest {
     public void setReferenceNumber(String referenceNumber) {
         this.referenceNumber = referenceNumber;
     }
+
+    @Override
+    public String toString() {
+        return "ResendOTPRequest{" +
+                "emailId='" + emailId + '\'' +
+                ", referenceNumber='" + referenceNumber + '\'' +
+                '}';
+    }
 }

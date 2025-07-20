@@ -40,4 +40,14 @@ public class OTPResponse {
     public void setOtpNumber(String otpNumber) {
         this.otpNumber = otpNumber;
     }
+
+    @Override
+    public String toString() {
+        return "OTPResponse{" +
+                "success=" + success +
+                ", message='" + message + '\'' +
+                ", otpNumber='" + otpNumber + '\'' +
+                ", referenceNumber='" + referenceNumber + '\'' +
+                '}';
+    }
 }
