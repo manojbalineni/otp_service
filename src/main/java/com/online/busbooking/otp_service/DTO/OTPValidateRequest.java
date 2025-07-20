@@ -6,7 +6,7 @@ public class OTPValidateRequest {
     @Pattern(regexp = "^\\d{4}$" , message = "OTP must be exactly 4 digit")
     private String otpNumber;
 
-    @Pattern(regexp = "^OTP\\d{6}$" , message =  "Reference number must start with OTP and should have 6 digits")
+    @Pattern(regexp = "^OTP-\\d{6}$" , message =  "Reference number must start with OTP and should have 6 digits")
     private String referenceNumber;
 
     public String getOtpNumber() {

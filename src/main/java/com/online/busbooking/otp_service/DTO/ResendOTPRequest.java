@@ -8,7 +8,7 @@ public class ResendOTPRequest {
     @Email(message = "Enter a valid email Id")
     private String emailId;
 
-    @Pattern(regexp = "^OTP\\d{6}$" , message =  "Reference number must start with OTP and have 6 digits")
+    @Pattern(regexp = "^OTP-\\d{6}$" , message =  "Reference number must start with OTP and have 6 digits")
     private String referenceNumber;
 
     public String getEmailId() {
