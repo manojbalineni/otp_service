@@ -17,6 +17,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,6 +62,8 @@ public class OTPControllerTest {
         otpResendResponse = objectMapper.readValue(new File("src/test/resources/json/otp_resend_res.json") , OTPResponse.class);
 
     }
+
+
 
     @Test
     void testGenerateOTPAPI() throws Exception{
@@ -134,5 +137,21 @@ public class OTPControllerTest {
                 .andExpect(jsonPath("$.timeStamp").exists())
                 .andExpect(jsonPath("$.errorCode").value("202"))
                 .andExpect(jsonPath("$.errorMessage").value("OTP is expired"));
+    }
+
+    @Test
+    void testMethodArgumentNotValidException() throws Exception {
+        String invalidJson = """
+            {
+                
+                "emailId": "invalidEmail"
+            }
+        """;
+        mockMvc.perform(post("/otp/generateOTP")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(invalidJson))
+                .andExpect(status().isBadRequest());
+
+
     }
 }
